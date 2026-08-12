@@ -1,4 +1,5 @@
-tailwind.config = {
+window.tailwind = window.tailwind || {};
+window.tailwind.config = {
     darkMode: "class",
     theme: {
         extend: {
@@ -82,3 +83,28 @@ tailwind.config = {
         }
     }
 };
+
+window.addEventListener("DOMContentLoaded", () => {
+    const mobileMenu = document.getElementById("mobile-menu");
+    const openButton = document.getElementById("mobile-menu-button");
+    const closeButton = document.getElementById("mobile-menu-close");
+
+    if (!mobileMenu || !openButton || !closeButton) {
+        return;
+    }
+
+    const toggleMenu = () => {
+        mobileMenu.classList.toggle("hidden");
+        document.body.classList.toggle("overflow-hidden");
+    };
+
+    openButton.addEventListener("click", toggleMenu);
+    closeButton.addEventListener("click", toggleMenu);
+
+    mobileMenu.querySelectorAll("a[href^='#']").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+        });
+    });
+});

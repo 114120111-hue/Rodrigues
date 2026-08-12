@@ -22,3 +22,17 @@ body {
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
 }
+
+body {
+    scroll-behavior: smooth;
+}
+
+#mobile-menu {
+    z-index: 60;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-top: 4rem;
+    }
+}

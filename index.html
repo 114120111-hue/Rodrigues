@@ -10,23 +10,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600&family=Inter:wght@400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
-<body class="min-h-screen flex flex-col md:flex-row antialiased">
-    <!-- Mobile Top Navigation (Visible only on mobile) -->
-    <header class="md:hidden bg-background/80 backdrop-blur-md fixed top-0 w-full z-50 flex justify-between items-center px-margin-sm h-16 max-w-7xl mx-auto">
-        <div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">STUDENT_PORTFOLIO_V1</div>
-        <nav class="flex gap-4">
-            <a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 font-label-mono text-label-mono" href="#">Intro</a>
-            <a class="text-primary border-b-2 border-primary pb-1 cursor-pointer active:scale-95 font-label-mono text-label-mono" href="#">Education</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 font-label-mono text-label-mono" href="#">Languages</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 font-label-mono text-label-mono" href="#">Learning</a>
-        </nav>
-        <div class="flex items-center">
-            <span class="material-symbols-outlined text-primary cursor-pointer active:scale-95">contrast</span>
+<body class="min-h-screen bg-background text-on-background antialiased">
+    <header class="md:hidden fixed inset-x-0 top-0 z-50 bg-background/95 backdrop-blur-xl border-b border-white/10">
+        <div class="flex items-center justify-between px-4 py-3">
+            <div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">PORTFOLIO_V1</div>
+            <button id="mobile-menu-button" class="inline-flex items-center justify-center rounded-md border border-white/10 bg-surface-container-low/90 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/60 transition">
+                <span class="material-symbols-outlined text-lg">menu</span>
+            </button>
         </div>
     </header>
 
-    <!-- Side Navigation (Visible on desktop) -->
-    <aside class="hidden md:flex flex-col p-6 h-full w-64 border-r border-white/10 bg-surface-container-lowest fixed left-0 top-0 z-40">
+    <div id="mobile-menu" class="fixed inset-0 z-50 hidden bg-background/95 backdrop-blur-2xl px-6 py-6">
+        <div class="flex items-center justify-between">
+            <div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">NAVIGATION</div>
+            <button id="mobile-menu-close" class="inline-flex items-center justify-center rounded-md border border-white/10 bg-surface-container-low/90 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/60 transition">
+                <span class="material-symbols-outlined text-lg">close</span>
+            </button>
+        </div>
+        <nav class="mt-10 flex flex-col gap-4 text-on-surface-variant">
+            <a href="#intro" class="block rounded-lg border border-white/10 bg-surface-container-low/80 px-4 py-4 text-lg font-label-mono transition hover:bg-surface-variant/70">Intro</a>
+            <a href="#education" class="block rounded-lg border border-white/10 bg-surface-container-low/80 px-4 py-4 text-lg font-label-mono transition hover:bg-surface-variant/70">Education</a>
+            <a href="#languages" class="block rounded-lg border border-white/10 bg-surface-container-low/80 px-4 py-4 text-lg font-label-mono transition hover:bg-surface-variant/70">Languages</a>
+            <a href="#learning" class="block rounded-lg border border-white/10 bg-surface-container-low/80 px-4 py-4 text-lg font-label-mono transition hover:bg-surface-variant/70">Learning</a>
+        </nav>
+    </div>
+
+    <aside class="hidden md:flex flex-col p-6 h-screen w-64 border-r border-white/10 bg-surface-container-lowest fixed left-0 top-0 z-40">
         <div class="mb-12">
             <div class="w-20 h-20 rounded-full ghost-container mb-4 overflow-hidden bg-surface-container-low flex items-center justify-center">
                 <span class="material-symbols-outlined text-outline-variant text-4xl">account_circle</span>
@@ -35,21 +44,21 @@
             <p class="font-label-mono text-label-mono text-on-surface-variant">Foreign Languages Dept.</p>
         </div>
         <nav class="flex-1 flex flex-col gap-2">
-            <a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all duration-200 font-label-mono text-label-mono group" href="#">
-                <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">home</span>
-                <span class="group-hover:text-primary">Home</span>
+            <a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all duration-200 font-label-mono text-label-mono" href="#intro">
+                <span class="material-symbols-outlined text-on-surface-variant">home</span>
+                Intro
             </a>
-            <a class="flex items-center gap-3 p-3 bg-secondary-container text-on-secondary-container rounded-lg transition-all duration-200 font-label-mono text-label-mono" href="#">
+            <a class="flex items-center gap-3 p-3 bg-secondary-container text-on-secondary-container rounded-lg transition-all duration-200 font-label-mono text-label-mono" href="#education">
                 <span class="material-symbols-outlined">school</span>
-                <span>Education</span>
+                Education
             </a>
-            <a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all duration-200 font-label-mono text-label-mono group" href="#">
-                <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">translate</span>
-                <span class="group-hover:text-primary">Polyglot</span>
+            <a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all duration-200 font-label-mono text-label-mono" href="#languages">
+                <span class="material-symbols-outlined text-on-surface-variant">translate</span>
+                Languages
             </a>
-            <a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all duration-200 font-label-mono text-label-mono group" href="#">
-                <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">trending_up</span>
-                <span class="group-hover:text-primary">Growth</span>
+            <a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all duration-200 font-label-mono text-label-mono" href="#learning">
+                <span class="material-symbols-outlined text-on-surface-variant">trending_up</span>
+                Learning
             </a>
         </nav>
         <div class="mt-auto pt-8">
@@ -60,120 +69,154 @@
         </div>
     </aside>
 
-    <!-- Main Content Canvas -->
     <main class="flex-1 w-full md:pl-64 pt-20 md:pt-0 min-h-screen">
         <div class="max-w-5xl mx-auto px-4 md:px-margin-md py-margin-md md:py-margin-lg">
-            <!-- Header Section -->
-            <header class="mb-margin-lg border-b border-white/10 pb-8">
-                <h2 class="font-headline-xl text-headline-xl text-primary mb-4 hidden md:block">Academic Foundation</h2>
-                <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-4 md:hidden">Academic Foundation</h2>
-                <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
-                    Detailed record of studies at Tzu Chi University, focusing on linguistic acquisition, literature analysis, and cross-cultural communication frameworks.
-                </p>
-            </header>
-            <!-- Grid Layout -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-                <!-- Main Institution Card -->
-                <div class="md:col-span-8 ghost-container p-6 bg-surface-container-low/50 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-4 opacity-10">
-                        <span class="material-symbols-outlined text-6xl">account_balance</span>
-                    </div>
-                    <div class="flex items-center gap-2 mb-6 border-b border-white/10 pb-4">
-                        <span class="material-symbols-outlined text-primary">school</span>
-                        <h3 class="font-headline-lg text-headline-lg text-primary hidden md:block">Tzu Chi University</h3>
-                        <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary md:hidden">Tzu Chi University</h3>
-                    </div>
-                    <div class="space-y-6">
-                        <div>
-                            <span class="font-label-mono text-label-mono text-outline mb-1 block uppercase">Department</span>
-                            <p class="font-body-md text-body-md text-on-background">Foreign Languages and Literature</p>
-                        </div>
-                        <div>
-                            <span class="font-label-mono text-label-mono text-outline mb-1 block uppercase">Degree Target</span>
-                            <p class="font-body-md text-body-md text-on-background">Bachelor of Arts (B.A.)</p>
-                        </div>
-                        <div>
-                            <span class="font-label-mono text-label-mono text-outline mb-2 block uppercase">Core Focus Areas</span>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Linguistics</span>
-                                <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Western Literature</span>
-                                <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Translation Theory</span>
-                                <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Cultural Studies</span>
-                            </div>
+            <section id="intro" class="mb-12">
+                <div class="rounded-2xl ghost-container p-6 md:p-8 bg-surface-container-low/70 border border-white/10">
+                    <div class="flex flex-col gap-4 md:gap-6">
+                        <div class="text-sm font-label-mono uppercase tracking-[0.3em] text-secondary">Structural Minimalism</div>
+                        <h1 class="text-3xl md:text-5xl font-headline-xl text-primary leading-tight">Academic Foundation at TCU</h1>
+                        <p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">Foreign Languages Department student focused on linguistics, literature, and cross-cultural communication. Designed for mobile-first viewing with a responsive hamburger navigation and clean modular sections.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Linguistics</span>
+                            <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Translation</span>
+                            <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Cultural Studies</span>
                         </div>
                     </div>
                 </div>
-                <!-- Status Sidebar -->
-                <div class="md:col-span-4 flex flex-col gap-gutter">
-                    <!-- Current Status Skeleton -->
-                    <div class="ghost-container p-6 bg-surface-container/30 h-full flex flex-col justify-between">
+            </section>
+
+            <section id="education" class="mb-12">
+                <div class="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
+                    <article class="ghost-container p-6 rounded-3xl bg-surface-container-low/60 border border-white/10">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-3 text-primary">
+                                <span class="material-symbols-outlined">school</span>
+                                <h2 class="font-headline-lg text-headline-lg">Tzu Chi University</h2>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <span class="font-label-mono text-label-mono text-outline uppercase">Department</span>
+                                    <p class="font-body-md text-on-background">Foreign Languages and Literature</p>
+                                </div>
+                                <div>
+                                    <span class="font-label-mono text-label-mono text-outline uppercase">Degree Target</span>
+                                    <p class="font-body-md text-on-background">Bachelor of Arts (B.A.)</p>
+                                </div>
+                                <div>
+                                    <span class="font-label-mono text-label-mono text-outline uppercase">Core Focus Areas</span>
+                                    <div class="mt-3 flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Linguistics</span>
+                                        <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Western Literature</span>
+                                        <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Translation Theory</span>
+                                        <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Cultural Studies</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <aside class="ghost-container p-6 rounded-3xl bg-surface-container/30 border border-white/10 flex flex-col justify-between">
                         <div>
-                            <span class="font-label-mono text-label-mono text-outline mb-4 block uppercase flex items-center gap-2">
+                            <span class="font-label-mono text-label-mono text-outline uppercase flex items-center gap-2">
                                 <span class="material-symbols-outlined text-sm">schedule</span>
                                 Current Status
                             </span>
-                            <div class="font-headline-lg text-headline-lg text-primary hidden md:block">Year 3</div>
-                            <div class="font-headline-lg-mobile text-headline-lg-mobile text-primary md:hidden">Year 3</div>
-                            <p class="font-body-md text-body-md text-on-surface-variant mt-2">Active Student</p>
+                            <div class="mt-4 text-3xl font-headline-lg text-primary">Year 2</div>
+                            <p class="mt-2 font-body-md text-on-surface-variant">Active student at Tzu Chi University.</p>
                         </div>
                         <div class="mt-8">
                             <div class="flex justify-between font-label-mono text-label-mono text-outline-variant mb-2">
                                 <span>Credits</span>
                                 <span>85 / 128</span>
                             </div>
-                            <div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
-                                <div class="h-full bg-secondary w-[66%] skeleton-shimmer"></div>
+                            <div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+                                <div class="h-full bg-secondary w-[66%]"></div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section id="languages" class="mb-12">
+                <div class="flex flex-col gap-4 mb-6">
+                    <div class="text-sm font-label-mono uppercase tracking-[0.3em] text-secondary">Language Portfolio</div>
+                    <h2 class="font-headline-xl text-3xl text-primary">Polyglot Skills</h2>
+                    <p class="font-body-md text-on-surface-variant max-w-3xl">A quick look at language proficiency and learning targets. Designed to look crisp on phones, tablets, and desktop screens.</p>
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <article class="ghost-container p-5 rounded-3xl bg-surface-container-low/60 border border-white/10">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-label-mono text-label-mono text-primary">English</span>
+                            <span class="text-sm font-label-mono text-secondary">Native / C2</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="text-sm text-on-surface-variant">Speaking</div>
+                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-primary w-full"></div></div>
+                            <div class="text-sm text-on-surface-variant">Writing</div>
+                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-primary w-full"></div></div>
+                        </div>
+                    </article>
+                    <article class="ghost-container p-5 rounded-3xl bg-surface-container-low/60 border border-white/10">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-label-mono text-label-mono text-primary">Portuguese</span>
+                            <span class="text-sm font-label-mono text-secondary">Fluent / C1</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="text-sm text-on-surface-variant">Reading</div>
+                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-secondary w-[90%]"></div></div>
+                            <div class="text-sm text-on-surface-variant">Speaking</div>
+                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-secondary w-[85%]"></div></div>
+                        </div>
+                    </article>
+                    <article class="ghost-container p-5 rounded-3xl bg-surface-container-low/60 border border-white/10 sm:col-span-2">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-label-mono text-label-mono text-primary">Mandarin Chinese</span>
+                            <span class="text-sm font-label-mono text-secondary">in progress / B1</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="text-sm text-on-surface-variant">Pinyin</div>
+                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-tertiary w-[80%]"></div></div>
+                            <div class="text-sm text-on-surface-variant">Hanzi</div>
+                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-tertiary w-[40%]"></div></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="learning" class="mb-12">
+                <div class="text-sm font-label-mono uppercase tracking-[0.3em] text-secondary mb-4">Learning Progress</div>
+                <div class="ghost-container rounded-3xl bg-surface-container-low/60 border border-white/10 p-6">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-headline-lg text-headline-lg text-primary">Academic Milestones</h3>
+                            <p class="font-body-md text-on-surface-variant mt-2">Tracking key course outcomes and real progress markers.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="rounded-2xl bg-surface p-4">
+                                <div class="flex justify-between mb-2 font-label-mono text-label-mono text-outline">Fall 2022<span>A-</span></div>
+                                <div class="text-body-md text-on-surface-variant">Intro to Linguistics and foundational language structure.</div>
+                            </div>
+                            <div class="rounded-2xl bg-surface p-4">
+                                <div class="flex justify-between mb-2 font-label-mono text-label-mono text-outline">Spring 2023<span>B+</span></div>
+                                <div class="text-body-md text-on-surface-variant">British Literature Survey and text analysis.</div>
+                            </div>
+                            <div class="rounded-2xl bg-surface p-4">
+                                <div class="flex justify-between mb-2 font-label-mono text-label-mono text-outline">Fall 2023<span class="text-secondary">IP</span></div>
+                                <div class="text-body-md text-on-surface-variant">Advanced translation practice and ongoing skills development.</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Academic Milestones List (Zebra Striping) -->
-                <div class="md:col-span-12 mt-margin-md">
-                    <h4 class="font-label-mono text-label-mono text-primary mb-6 flex items-center gap-2 uppercase tracking-widest border-b border-white/10 pb-2">
-                        <span class="material-symbols-outlined text-sm">timeline</span>
-                        Key Academic Milestones
-                    </h4>
-                    <div class="flex flex-col ghost-container">
-                        <div class="flex flex-col md:flex-row border-b border-white/10 bg-surface-container-low p-4 gap-4">
-                            <div class="w-full md:w-32 font-label-mono text-label-mono text-outline flex items-center">Fall 2022</div>
-                            <div class="flex-1">
-                                <h5 class="font-body-md text-body-md text-primary font-medium">Intro to Linguistics</h5>
-                                <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Foundation of phonetics, syntax, and language structure.</p>
-                            </div>
-                            <div class="font-label-mono text-label-mono text-secondary flex items-center">A-</div>
-                        </div>
-                        <div class="flex flex-col md:flex-row border-b border-white/10 bg-surface p-4 gap-4">
-                            <div class="w-full md:w-32 font-label-mono text-label-mono text-outline flex items-center">Spring 2023</div>
-                            <div class="flex-1">
-                                <h5 class="font-body-md text-body-md text-primary font-medium">British Literature Survey</h5>
-                                <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Analysis of texts from Middle Ages to 18th Century.</p>
-                            </div>
-                            <div class="font-label-mono text-label-mono text-secondary flex items-center">B+</div>
-                        </div>
-                        <div class="flex flex-col md:flex-row bg-surface-container-low p-4 gap-4 relative overflow-hidden">
-                            <div class="absolute inset-0 skeleton-shimmer opacity-20 pointer-events-none"></div>
-                            <div class="w-full md:w-32 font-label-mono text-label-mono text-outline flex items-center">Fall 2023</div>
-                            <div class="flex-1">
-                                <h5 class="font-body-md text-body-md text-primary font-medium">Advanced Translation Practice</h5>
-                                <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">English-Mandarin bidirectional text translation methodologies.</p>
-                            </div>
-                            <div class="font-label-mono text-label-mono text-tertiary-fixed-dim flex items-center">
-                                <span class="material-symbols-outlined text-sm animate-spin mr-1">sync</span>
-                                IP
-                            </div>
-                        </div>
+            </section>
+
+            <footer class="mt-16 py-10 border-t border-white/10 text-on-surface-variant">
+                <div class="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
+                    <div>© 2024 TCU Foreign Languages Student • Built with Structural Minimalism</div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="transition hover:text-primary">LinkedIn</a>
+                        <a href="#" class="transition hover:text-primary">GitHub</a>
+                        <a href="#" class="transition hover:text-primary">Academic Papers</a>
                     </div>
-                </div>
-            </div>
-            <!-- Footer -->
-            <footer class="mt-margin-lg py-12 border-t border-white/10 bg-surface-container-lowest flex flex-col md:flex-row justify-between items-center w-full">
-                <div class="font-label-mono text-label-mono text-on-surface-variant mb-4 md:mb-0">
-                    © 2024 TCU Foreign Languages Student • Built with Structural Minimalism
-                </div>
-                <div class="flex gap-6">
-                    <a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
-                    <a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">GitHub</a>
-                    <a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">Academic Papers</a>
                 </div>
             </footer>
         </div>
