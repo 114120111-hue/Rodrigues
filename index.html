@@ -1,225 +1,254 @@
 ﻿<!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TCU Portfolio - Education</title>
-    <script src="script.js"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <title>Rodrigues • Academic Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600&family=Inter:wght@400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
 </head>
-<body class="min-h-screen bg-background text-on-background antialiased">
-    <header class="md:hidden fixed inset-x-0 top-0 z-50 bg-background/95 backdrop-blur-xl border-b border-white/10">
-        <div class="flex items-center justify-between px-4 py-3">
-            <div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">PORTFOLIO_V1</div>
-            <button id="mobile-menu-button" class="inline-flex items-center justify-center rounded-md border border-white/10 bg-surface-container-low/90 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/60 transition">
-                <span class="material-symbols-outlined text-lg">menu</span>
-            </button>
-        </div>
+<body>
+    <header class="topbar">
+        <div class="topbar__brand">RODRIGUES</div>
+        <nav class="topbar__nav desktop-nav">
+            <a href="#intro">Intro</a>
+            <a href="#about">About</a>
+            <a href="#journey">Journey</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#values">Values</a>
+        </nav>
+        <button class="topbar__menu" id="mobile-menu-button" aria-label="Open navigation">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
     </header>
 
-    <div id="mobile-menu" class="fixed inset-0 z-50 hidden bg-background/95 backdrop-blur-2xl px-6 py-6">
-        <div class="flex items-center justify-between">
-            <div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">NAVIGATION</div>
-            <button id="mobile-menu-close" class="inline-flex items-center justify-center rounded-md border border-white/10 bg-surface-container-low/90 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/60 transition">
-                <span class="material-symbols-outlined text-lg">close</span>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu__header">
+            <span>Navigation</span>
+            <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Close navigation">
+                <span class="material-symbols-outlined">close</span>
             </button>
         </div>
-        <nav class="mt-10 flex flex-col gap-4 text-on-surface-variant">
-            <a href="#intro" class="block rounded-lg border border-white/10 bg-surface-container-low/80 px-4 py-4 text-lg font-label-mono transition hover:bg-surface-variant/70">Intro</a>
-            <a href="#education" class="block rounded-lg border border-white/10 bg-surface-container-low/80 px-4 py-4 text-lg font-label-mono transition hover:bg-surface-variant/70">Education</a>
-            <a href="#languages" class="block rounded-lg border border-white/10 bg-surface-container-low/80 px-4 py-4 text-lg font-label-mono transition hover:bg-surface-variant/70">Languages</a>
-            <a href="#learning" class="block rounded-lg border border-white/10 bg-surface-container-low/80 px-4 py-4 text-lg font-label-mono transition hover:bg-surface-variant/70">Learning</a>
+        <nav class="mobile-menu__nav">
+            <a href="#intro">Intro</a>
+            <a href="#about">About</a>
+            <a href="#journey">Journey</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#values">Values</a>
         </nav>
     </div>
 
-    <aside class="hidden md:flex flex-col p-6 h-screen w-64 border-r border-white/10 bg-surface-container-lowest fixed left-0 top-0 z-40">
-        <div class="mb-12">
-            <div class="w-20 h-20 rounded-full ghost-container mb-4 overflow-hidden bg-surface-container-low flex items-center justify-center">
-                <span class="material-symbols-outlined text-outline-variant text-4xl">account_circle</span>
+    <main class="page-shell">
+        <section id="intro" class="hero-section">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Foreign Languages &amp; Literature</p>
+                    <h1>Rodrigues</h1>
+                    <p class="hero-description">A portfolio shaped by language, travel, photography, and a curiosity for how people, culture, and stories connect across borders.</p>
+                    <p class="hero-keyline">Foreign Languages &amp; Literature · Travel &amp; Tourism · Visual Storytelling</p>
+                    <div class="hero-actions">
+                        <a class="button button--ghost" href="#about">Explore</a>
+                        <a class="button button--border" href="#journey">Read More</a>
+                    </div>
+                </div>
+                <div class="hero-banner">
+                    <div class="hero-panel">
+                        <span class="panel-label">Academic Focus</span>
+                        <p>Language systems, translation practice, and cultural frameworks that shape international communication.</p>
+                    </div>
+                    <div class="hero-aside">
+                        <div class="hero-aside__item">
+                            <span class="label">Current status</span>
+                            <strong>Year 2</strong>
+                        </div>
+                        <div class="hero-aside__item">
+                            <span class="label">Major</span>
+                            <strong>Foreign Languages &amp; Literature</strong>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="font-headline-lg text-headline-lg text-primary mb-1">TCU Portfolio</h1>
-            <p class="font-label-mono text-label-mono text-on-surface-variant">Foreign Languages Dept.</p>
-        </div>
-        <nav class="flex-1 flex flex-col gap-2">
-            <a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all duration-200 font-label-mono text-label-mono" href="#intro">
-                <span class="material-symbols-outlined text-on-surface-variant">home</span>
-                Intro
-            </a>
-            <a class="flex items-center gap-3 p-3 bg-secondary-container text-on-secondary-container rounded-lg transition-all duration-200 font-label-mono text-label-mono" href="#education">
-                <span class="material-symbols-outlined">school</span>
-                Education
-            </a>
-            <a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all duration-200 font-label-mono text-label-mono" href="#languages">
-                <span class="material-symbols-outlined text-on-surface-variant">translate</span>
-                Languages
-            </a>
-            <a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all duration-200 font-label-mono text-label-mono" href="#learning">
-                <span class="material-symbols-outlined text-on-surface-variant">trending_up</span>
-                Learning
-            </a>
-        </nav>
-        <div class="mt-auto pt-8">
-            <button class="w-full py-3 ghost-container font-label-mono text-label-mono text-primary hover:bg-surface-variant transition-colors flex justify-center items-center gap-2 rounded">
-                <span class="material-symbols-outlined text-sm">download</span>
-                Download CV
-            </button>
-        </div>
-    </aside>
+        </section>
 
-    <main class="flex-1 w-full md:pl-64 pt-20 md:pt-0 min-h-screen">
-        <div class="max-w-5xl mx-auto px-4 md:px-margin-md py-margin-md md:py-margin-lg">
-            <section id="intro" class="mb-12">
-                <div class="rounded-2xl ghost-container p-6 md:p-8 bg-surface-container-low/70 border border-white/10">
-                    <div class="flex flex-col gap-4 md:gap-6">
-                        <div class="text-sm font-label-mono uppercase tracking-[0.3em] text-secondary">Structural Minimalism</div>
-                        <h1 class="text-3xl md:text-5xl font-headline-xl text-primary leading-tight">Academic Foundation at TCU</h1>
-                        <p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">Foreign Languages Department student focused on linguistics, literature, and cross-cultural communication. Designed for mobile-first viewing with a responsive hamburger navigation and clean modular sections.</p>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Linguistics</span>
-                            <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Translation</span>
-                            <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Cultural Studies</span>
-                        </div>
+        <section id="about" class="section section--wide">
+            <div class="section__intro">
+                <span class="eyebrow">about me</span>
+                <h2>A measured academic profile crafted for international study and thoughtful cultural exchange.</h2>
+            </div>
+            <div class="about-grid">
+                <div>
+                    <p>I am a student who combines academic rigor with practical entrepreneurship, creative curiosity, and a global outlook. My portfolio reflects language study, international perspective, and a quietly luxurious editorial aesthetic.</p>
+                </div>
+                <div class="about-meta">
+                    <div><span class="label">Nationality</span><strong>Mozambican</strong></div>
+                    <div><span class="label">Languages</span><strong>Portuguese / English B2 / Mandarin A2</strong></div>
+                    <div><span class="label">Certifications</span><strong>Duolingo, IELTS, TOCFL</strong></div>
+                    <div><span class="label">Experience</span><strong>Economics study, language development, online entrepreneurship, volunteering, tourism operations</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" class="section section--split">
+            <div class="section__intro">
+                <span class="eyebrow">academic journey</span>
+                <h2>University, courses, and academic momentum.</h2>
+            </div>
+            <div class="journey-grid">
+                <div class="journey-card">
+                    <span class="label">University</span>
+                    <strong>Tzu Chi University</strong>
+                    <p>Major in Foreign Languages and Literature with emphasis on translation theory, literary analysis, and cross-cultural communication.</p>
+                </div>
+                <div class="journey-card journey-card--accent">
+                    <span class="label">Academic interests</span>
+                    <strong>Language systems · Cultural studies · Translation methodology</strong>
+                </div>
+                <div class="journey-list">
+                    <div class="journey-item">
+                        <strong>Intro to Linguistics</strong>
+                        <p>Foundational study of phonetics, syntax, and the structure of language.</p>
+                    </div>
+                    <div class="journey-item">
+                        <strong>British Literature Survey</strong>
+                        <p>Critical analysis of texts from the Middle Ages to the 18th century.</p>
+                    </div>
+                    <div class="journey-item">
+                        <strong>Tourism &amp; Travel Planning</strong>
+                        <p>Organizing trips, guiding tours, managing itineraries, bookings, hotels, transportation, and full tourism services.</p>
                     </div>
                 </div>
-            </section>
-
-            <section id="education" class="mb-12">
-                <div class="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
-                    <article class="ghost-container p-6 rounded-3xl bg-surface-container-low/60 border border-white/10">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center gap-3 text-primary">
-                                <span class="material-symbols-outlined">school</span>
-                                <h2 class="font-headline-lg text-headline-lg">Tzu Chi University</h2>
-                            </div>
-                            <div class="space-y-4">
-                                <div>
-                                    <span class="font-label-mono text-label-mono text-outline uppercase">Department</span>
-                                    <p class="font-body-md text-on-background">Foreign Languages and Literature</p>
-                                </div>
-                                <div>
-                                    <span class="font-label-mono text-label-mono text-outline uppercase">Degree Target</span>
-                                    <p class="font-body-md text-on-background">Bachelor of Arts (B.A.)</p>
-                                </div>
-                                <div>
-                                    <span class="font-label-mono text-label-mono text-outline uppercase">Core Focus Areas</span>
-                                    <div class="mt-3 flex flex-wrap gap-2">
-                                        <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Linguistics</span>
-                                        <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Western Literature</span>
-                                        <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Translation Theory</span>
-                                        <span class="px-3 py-1 ghost-container rounded-full font-label-mono text-label-mono text-secondary">Cultural Studies</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <aside class="ghost-container p-6 rounded-3xl bg-surface-container/30 border border-white/10 flex flex-col justify-between">
-                        <div>
-                            <span class="font-label-mono text-label-mono text-outline uppercase flex items-center gap-2">
-                                <span class="material-symbols-outlined text-sm">schedule</span>
-                                Current Status
-                            </span>
-                            <div class="mt-4 text-3xl font-headline-lg text-primary">Year 2</div>
-                            <p class="mt-2 font-body-md text-on-surface-variant">Active student at Tzu Chi University.</p>
-                        </div>
-                        <div class="mt-8">
-                            <div class="flex justify-between font-label-mono text-label-mono text-outline-variant mb-2">
-                                <span>Credits</span>
-                                <span>85 / 128</span>
-                            </div>
-                            <div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
-                                <div class="h-full bg-secondary w-[66%]"></div>
-                            </div>
-                        </div>
-                    </aside>
+                <div class="journey-card">
+                    <span class="label">Languages</span>
+                    <strong>Portuguese, English, Mandarin</strong>
+                    <p>Native Portuguese speaker with advanced English skills and developing Mandarin ability.</p>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="languages" class="mb-12">
-                <div class="flex flex-col gap-4 mb-6">
-                    <div class="text-sm font-label-mono uppercase tracking-[0.3em] text-secondary">Language Portfolio</div>
-                    <h2 class="font-headline-xl text-3xl text-primary">Polyglot Skills</h2>
-                    <p class="font-body-md text-on-surface-variant max-w-3xl">A quick look at language proficiency and learning targets. Designed to look crisp on phones, tablets, and desktop screens.</p>
-                </div>
-                <div class="grid gap-4 sm:grid-cols-2">
-                    <article class="ghost-container p-5 rounded-3xl bg-surface-container-low/60 border border-white/10">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="font-label-mono text-label-mono text-primary">English</span>
-                            <span class="text-sm font-label-mono text-secondary">Native / C2</span>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="text-sm text-on-surface-variant">Speaking</div>
-                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-primary w-full"></div></div>
-                            <div class="text-sm text-on-surface-variant">Writing</div>
-                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-primary w-full"></div></div>
-                        </div>
-                    </article>
-                    <article class="ghost-container p-5 rounded-3xl bg-surface-container-low/60 border border-white/10">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="font-label-mono text-label-mono text-primary">Portuguese</span>
-                            <span class="text-sm font-label-mono text-secondary">Fluent / C1</span>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="text-sm text-on-surface-variant">Reading</div>
-                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-secondary w-[90%]"></div></div>
-                            <div class="text-sm text-on-surface-variant">Speaking</div>
-                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-secondary w-[85%]"></div></div>
-                        </div>
-                    </article>
-                    <article class="ghost-container p-5 rounded-3xl bg-surface-container-low/60 border border-white/10 sm:col-span-2">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="font-label-mono text-label-mono text-primary">Mandarin Chinese</span>
-                            <span class="text-sm font-label-mono text-secondary">in progress / B1</span>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="text-sm text-on-surface-variant">Pinyin</div>
-                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-tertiary w-[80%]"></div></div>
-                            <div class="text-sm text-on-surface-variant">Hanzi</div>
-                            <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"><div class="h-full bg-tertiary w-[40%]"></div></div>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section id="learning" class="mb-12">
-                <div class="text-sm font-label-mono uppercase tracking-[0.3em] text-secondary mb-4">Learning Progress</div>
-                <div class="ghost-container rounded-3xl bg-surface-container-low/60 border border-white/10 p-6">
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="font-headline-lg text-headline-lg text-primary">Academic Milestones</h3>
-                            <p class="font-body-md text-on-surface-variant mt-2">Tracking key course outcomes and real progress markers.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="rounded-2xl bg-surface p-4">
-                                <div class="flex justify-between mb-2 font-label-mono text-label-mono text-outline">Fall 2022<span>A-</span></div>
-                                <div class="text-body-md text-on-surface-variant">Intro to Linguistics and foundational language structure.</div>
-                            </div>
-                            <div class="rounded-2xl bg-surface p-4">
-                                <div class="flex justify-between mb-2 font-label-mono text-label-mono text-outline">Spring 2023<span>B+</span></div>
-                                <div class="text-body-md text-on-surface-variant">British Literature Survey and text analysis.</div>
-                            </div>
-                            <div class="rounded-2xl bg-surface p-4">
-                                <div class="flex justify-between mb-2 font-label-mono text-label-mono text-outline">Fall 2023<span class="text-secondary">IP</span></div>
-                                <div class="text-body-md text-on-surface-variant">Advanced translation practice and ongoing skills development.</div>
-                            </div>
-                        </div>
+        <section id="projects" class="section section--wide">
+            <div class="section__intro">
+                <span class="eyebrow">projects &amp; experience</span>
+                <h2>Featured work and professional stories, presented like editorial stories.</h2>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card project-card--large">
+                    <span class="label">Project</span>
+                    <h3>Cross-Cultural Language Study</h3>
+                    <p>An editorial exploration of linguistic frameworks and cultural communication across Portuguese, English, and Mandarin contexts.</p>
+                    <div class="project-meta">
+                        <span>2024</span>
+                        <span>Role: Research &amp; Translation</span>
                     </div>
-                </div>
-            </section>
-
-            <footer class="mt-16 py-10 border-t border-white/10 text-on-surface-variant">
-                <div class="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
-                    <div>© 2024 TCU Foreign Languages Student • Built with Structural Minimalism</div>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#" class="transition hover:text-primary">LinkedIn</a>
-                        <a href="#" class="transition hover:text-primary">GitHub</a>
-                        <a href="#" class="transition hover:text-primary">Academic Papers</a>
+                    <a class="project-link" href="#">VIEW PROJECT →</a>
+                </article>
+                <article class="project-card project-card--tall">
+                    <span class="label">Story</span>
+                    <h3>Entrepreneurship &amp; Commerce</h3>
+                    <p>Online business ventures in perfume and artisan food, rooted in a family tradition of commerce and practical enterprise.</p>
+                    <div class="project-meta">
+                        <span>Business</span>
+                        <span>Role: Founder / Operator</span>
                     </div>
+                </article>
+                <article class="project-card project-card--wide">
+                    <span class="label">Feature</span>
+                    <h3>Volunteer Leadership</h3>
+                    <p>Community work, public presentations, and cultural programming supporting an internationally minded academic profile.</p>
+                    <div class="project-meta">
+                        <span>Initiative</span>
+                        <span>Role: Volunteer</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="gallery" class="section section--wide">
+            <div class="section__intro">
+                <span class="eyebrow">photo stories</span>
+                <h2>Life, travel, and visual moments that bring the portfolio to life.</h2>
+            </div>
+            <div class="gallery-grid">
+                <article class="gallery-card" data-images='["images/travel1.jpg","images/travel2.jpg","images/travel3.jpg"]' aria-label="Open album: Travel">
+                    <div class="gallery-image">Travel album</div>
+                    <p>Travel and cultural scenes that capture your global perspective.</p>
+                </article>
+                <article class="gallery-card" data-images='["images/study1.jpg","images/study2.jpg"]' aria-label="Open album: Study">
+                    <div class="gallery-image">Study album</div>
+                    <p>Everyday moments from study, work, and city life.</p>
+                </article>
+                <article class="gallery-card" data-images='["images/photo1.jpg","images/photo2.jpg","images/photo3.jpg"]' aria-label="Open album: Photography">
+                    <div class="gallery-image">Photography album</div>
+                    <p>Creative photography and visual storytelling from recent journeys.</p>
+                </article>
+                <article class="gallery-card" data-images='["images/hospitality1.jpg","images/hospitality2.jpg"]' aria-label="Open album: Hospitality">
+                    <div class="gallery-image">Hospitality album</div>
+                    <p>Written memories, hospitality, and the places that shaped your path.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="section section--split">
+            <div class="section__intro">
+                <span class="eyebrow">skills</span>
+                <h2>A concise set of capabilities expressed through thoughtful typography.</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-pill">Language Analysis</div>
+                <div class="skill-pill">Translation</div>
+                <div class="skill-pill">Academic Writing</div>
+                <div class="skill-pill">Cross-Cultural Communication</div>
+                <div class="skill-pill">Editorial Thinking</div>
+                <div class="skill-pill">Entrepreneurship</div>
+                <div class="skill-pill">Photography</div>
+                <div class="skill-pill">Travel Research</div>
+            </div>
+        </section>
+
+        <section id="values" class="section section--wide">
+            <div class="section__intro">
+                <span class="eyebrow">activities &amp; values</span>
+                <h2>Internationally aware, curious, and grounded in responsible cultural engagement.</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Global Perspective</h3>
+                    <p>Experience living, studying, and working across cultures with a strong adaptability to new environments.</p>
                 </div>
-            </footer>
-        </div>
+                <div class="value-card">
+                    <h3>Creative Curiosity</h3>
+                    <p>Photography, travel, and observational storytelling that enrich academic thinking and visual sensibility.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Social Responsibility</h3>
+                    <p>Volunteer work, presentations, and collaborative projects rooted in community and cultural awareness.</p>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div>
+            <p class="eyebrow">Contact</p>
+            <p>International academic portfolio, grounded in language and cultural practice.</p>
+            <div class="contact-details">
+                <a href="mailto:rodriguesmanjate26@gmail.com">rodriguesmanjate26@gmail.com</a>
+                <a href="mailto:rodriguesmanjate26@icloud.com">rodriguesmanjate26@icloud.com</a>
+                <a href="tel:+886978984931">+886 978-984-931</a>
+                <a href="tel:+886908127931">+886 908-127-931</a>
+                <a href="https://vs.co/vlrvrr29" target="_blank" rel="noopener">VSCO profile</a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <a href="#intro">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#values">Contact</a>
+        </div>
+    </footer>
 </body>
 </html>
