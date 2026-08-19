@@ -8,8 +8,9 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     const toggleMenu = () => {
-        mobileMenu.classList.toggle("is-open");
+        const isOpen = mobileMenu.classList.toggle("is-open");
         document.body.classList.toggle("overflow-hidden");
+        openButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     };
 
     openButton.addEventListener("click", toggleMenu);
@@ -19,7 +20,16 @@ window.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", () => {
             mobileMenu.classList.remove("is-open");
             document.body.classList.remove("overflow-hidden");
+            openButton.setAttribute('aria-expanded', 'false');
         });
+    });
+    // Close mobile menu with Escape key for accessibility
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+            mobileMenu.classList.remove('is-open');
+            document.body.classList.remove('overflow-hidden');
+            openButton.setAttribute('aria-expanded', 'false');
+        }
     });
 });
 
